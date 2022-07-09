@@ -2,7 +2,7 @@
 
 > * **bitmap** 并发安全的bitmap
 > * NewBitMap(size uint64, lock_granularity uint64) *BitMap
->   > 返回一个容量为size的bitmap，lock_granularity的意义为多少个bit共用一把锁。
+>   > 返回一个容量为size的bitmap，lock_granularity的意义为多少个bit共用一把锁。lock_granularity为0表示不加锁，即非线程安全的位图。
 > * (b *BitMap) Get(pos uint64) bool 获取pos位置的值
 > * (b *BitMap) Set(pos uint64, value bool) 设置pos位置的值
 
